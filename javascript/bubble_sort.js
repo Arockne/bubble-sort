@@ -1,5 +1,20 @@
-function bubbleSort(arr) {
-  // type your code here
+
+//i
+  //array
+//o
+  //same array sorted
+function bubbleSort(arr, callback) {
+  let swapped = true;
+  while(swapped) {
+    swapped = false;
+    for (let i = 0; i <= arr.length; i += 1) {
+      if (arr[i] > arr[i+1]) {
+        [arr[i], arr[i+1]] = [arr[i+1], arr[i]]
+        swapped = true;
+      }
+    } 
+  }
+  return arr;
 }
 
 if (require.main === module) {
@@ -21,6 +36,9 @@ if (require.main === module) {
 
   console.log("Expecting: [1, 2, 3]");
   console.log("=>", bubbleSort([2, 3, 1]));
+
+  console.log("Expecting: [1, 2, 3]");
+
 }
 
 module.exports = bubbleSort;
